@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html class="full-height">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="//cdn.bootcss.com/bulma/0.4.1/css/bulma.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  
+  <title>OneLazyCat</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="JavaScript数组 数组的操作12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OneLazyCat">
+<meta property="og:url" content="https://onelazycat.github.io/2017/08/10/JavaScript数组基本操作/index.html">
+<meta property="og:site_name" content="OneLazyCat">
+<meta property="og:description" content="JavaScript数组 数组的操作12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-08-03T14:05:20.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="OneLazyCat">
+<meta name="twitter:description" content="JavaScript数组 数组的操作12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959">
+  
+    <link rel="alternate" href="/atom.xml" title="OneLazyCat" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/common.css">
+<link rel="stylesheet" href="/css/nav.css">
+<link rel="stylesheet" href="/css/layout.css">
+  
+
+</head>
+
+<body>
+  <header id="navbar" class="overflow-hidden">
+  <div class="container">
+    <nav class="nav">
+         <div class="nav-left">
+            <a href="/" class="nav-item" style="font-size: 20px;">
+              <span class="logo">onelazycat</span>'s Blog
+            </a>
+         </div>
+        <div class="nav-center is-hidden position-relative" id="search_container">
+            <div class="nav-item full-width full-height">
+                <i class="fa fa-search has-padding" aria-hidden="true"></i>
+                <input type="text" id="search_input" class="search-input full-height full-width" placeholder="Search post" autofocus>
+                <i id="close_search" class="fa fa-times" aria-hidden="true"></i>
+            </div>
+            <div id="search_result"></div>
+        </div>
+        <div class="nav-right nav-menu">
+            <a class="nav-item" id="search">
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </a>
+            
+            <a class="nav-item" href="/">
+                Home
+            </a>
+            
+            <a class="nav-item" href="/works">
+                My Works
+            </a>
+            
+            <a class="nav-item" href="/about">
+                About
+            </a>
+            
+        </div>
+        <span class="nav-toggle" id="navMenuDropdown">
+            <span></span>
+            <span></span>
+            <span></span>
+        </span>
+        <div class="navbar-menu position-absolute full-width content-box is-hidden-desktop is-flex flex-column center" style="top: 100%;">
+            
+            <a class="nav-item flex-1" href="/">
+                Home
+            </a>
+            
+            <a class="nav-item flex-1" href="/works">
+                My Works
+            </a>
+            
+            <a class="nav-item flex-1" href="/about">
+                About
+            </a>
+            
+        </div>
+    </nav>
+  </div>
+</header>
+
+  <div id="main-wrap" class="position-relative" style="margin-top: 55px;">
+      <div class="main-inner-content">
+          <!--博文页面-->
+
+<style>
+    .header-box {
+        height: 370px;
+        filter: blur(10px);
+        background-size: cover;
+        background-color: lightsteelblue;
+    }
+
+    .post-box {
+        padding: 15px;
+        padding-top: 60px;
+        min-height: 80vh;
+        margin-top: -200px;
+        border-radius: 4px;
+        background-color: rgba(255,255,255,.8);
+    }
+
+    .post-avatar {
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+    }
+
+    .flow-chart {
+        text-align: center;
+    }
+
+    img[alt="post-cover"] {
+        display: none;
+    }
+</style>
+<header>
+    <div id="header_box" class="header-box"></div>
+</header>
+<section>
+    <div class="container post-box">
+        <div class="content post-title is-flex center flex-column" style="margin-bottom: 70px; overflow: auto;">
+            <h1 class="has-text-centered" style="padding-bottom: 10px; border-bottom: 3px solid #fff">
+                <strong>Null</strong>
+            </h1>
+            
+            <div class="is-flex align-center">
+                <img class="post-avatar" src="https://thumbnail0.baidupcs.com/thumbnail/cfa5e7eef3389b0259e6151737eecf47?fid=2607819592-250528-510530242494455&time=1500494400&rt=sh&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-148AxvIcqPP1YzsYZWNG8jfGyjI%3D&expires=8h&chkv=0&chkbd=0&chkpc=&dp-logid=4642664983811432129&dp-callid=0&size=c710_u400&quality=100&vuk=-&ft=video">
+                <span style="padding:0 10px;"> <span class="sub-title">By</span> onelazycat</span>
+                <span class="post-date sub-title">at: 2017-08-10</span>
+            </div>
+            
+                <div>
+                    
+                </div>
+            
+        </div>
+        <div class="content" style="overflow: auto">
+            <h2 id="JavaScript数组"><a href="#JavaScript数组" class="headerlink" title="JavaScript数组"></a>JavaScript数组</h2><ul>
+<li>数组的操作<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div><div class="line">187</div><div class="line">188</div><div class="line">189</div><div class="line">190</div><div class="line">191</div><div class="line">192</div><div class="line">193</div><div class="line">194</div><div class="line">195</div><div class="line">196</div><div class="line">197</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">// var arr = ['appale','banana','putao'];</span></div><div class="line"><span class="comment">// console.log(arr);  </span></div><div class="line"></div><div class="line"><span class="comment">// var arr = new Array([size]);　//创建一个数组并指定长度，注意不是上限，是长度</span></div><div class="line"><span class="comment">// var arr = new Array([element0[, element1[, ...[, elementN]]]]);　//创建一个数组并赋值</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> fruits = <span class="keyword">new</span> <span class="built_in">Array</span>();</div><div class="line">fruits[<span class="number">0</span>] = <span class="string">'appale'</span>;</div><div class="line">fruits[<span class="number">1</span>] = <span class="string">'banana'</span>;</div><div class="line">fruits[<span class="number">2</span>] = <span class="string">'putao'</span>;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(fruits);  <span class="comment">// ["appale", "banana", "putao"]</span></div><div class="line"></div><div class="line">&lt;!-- 在数组末尾追加一个元素 --&gt;</div><div class="line">fruits.push(<span class="string">'longyan'</span>);</div><div class="line"><span class="built_in">console</span>.log(fruits);  <span class="comment">// ["appale", "banana", "putao", "longyan"]</span></div><div class="line"></div><div class="line">&lt;!-- 在数组最前面添加一个元素 --&gt;</div><div class="line">fruits.unshift(<span class="string">'first'</span>);</div><div class="line"><span class="built_in">console</span>.log(fruits);  <span class="comment">// ["first", "appale", "banana", "putao", "longyan"]</span></div><div class="line"></div><div class="line">&lt;!-- 删除数组最后一个元素,并返回删除元素 --&gt;</div><div class="line"><span class="keyword">var</span> lastEl = fruits.pop();</div><div class="line"><span class="built_in">console</span>.log(lastEl);  <span class="comment">//longyan</span></div><div class="line"><span class="built_in">console</span>.log(fruits);  <span class="comment">// ["first", "appale", "banana", "putao"]</span></div><div class="line"></div><div class="line">&lt;!-- 删除数组第一个元素,并返回删除元素 --&gt;</div><div class="line"><span class="keyword">var</span> firstEl = fruits.shift();</div><div class="line"><span class="built_in">console</span>.log(firstEl);  <span class="comment">// first</span></div><div class="line"><span class="built_in">console</span>.log(fruits);   <span class="comment">// ["appale", "banana", "putao"]</span></div><div class="line"></div><div class="line">&lt;!-- splice() 方法 使用--&gt;</div><div class="line"><span class="comment">/*</span></div><div class="line">* arrayObject.splice(index,number,item1,.....,itemX);</div><div class="line">* index , number 必须参数， item1,.....,itemX 可选参数</div><div class="line">* index 开始删除下标，number要删除/添加的个数</div><div class="line">*  item1,.....,itemX  添加元素</div><div class="line">*/</div><div class="line"></div><div class="line"><span class="comment">// 不带 item1,.....,itemX 参数 就是从哪里开始删除数组元素，删除几个</span></div><div class="line"><span class="keyword">var</span> newFru = fruits.splice(<span class="number">1</span>,<span class="number">2</span>);  </div><div class="line"><span class="built_in">console</span>.log(newFru); <span class="comment">// ["banana", "putao"]</span></div><div class="line"><span class="built_in">console</span>.log(fruits); <span class="comment">// ["appale"]</span></div><div class="line"></div><div class="line"><span class="comment">// 参数齐全 添加/替换数组元素</span></div><div class="line">fruits.splice(<span class="number">1</span>,<span class="number">2</span>,<span class="string">'banana'</span>,<span class="string">'putao'</span>);</div><div class="line"><span class="built_in">console</span>.log(fruits); <span class="comment">//["appale", "banana", "putao"]</span></div><div class="line"></div><div class="line">fruits.splice(<span class="number">1</span>,<span class="number">1</span>,<span class="string">'pear'</span>); </div><div class="line"><span class="built_in">console</span>.log(fruits); <span class="comment">// ["appale", "pear", "putao"]</span></div><div class="line"></div><div class="line">&lt;!-- slice() 方法使用--&gt;</div><div class="line"><span class="comment">/*</span></div><div class="line">* desc : 从已有的数组中返回选定的元素。</div><div class="line">* array.slice(start,end) end 结束截取位置，但不包括end (也可以看做从strat开始截取，截取end个)</div><div class="line">* start 必须参数 end可选</div><div class="line">* 不影响原数组</div><div class="line">*/</div><div class="line"><span class="keyword">var</span> exfruits1 = fruits.slice(<span class="number">0</span>);</div><div class="line"><span class="built_in">console</span>.log(exfruits1); <span class="comment">// ["appale", "pear", "putao"]</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> exfruits2 = fruits.slice(<span class="number">0</span>,<span class="number">2</span>); </div><div class="line"><span class="built_in">console</span>.log(exfruits2);  <span class="comment">// ["appale", "pear"]</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> exfruits3 = fruits.slice(<span class="number">-2</span>);  <span class="comment">//倒数第二个开始截取到最后</span></div><div class="line"><span class="built_in">console</span>.log(exfruits3);  <span class="comment">// ["pear", "putao"]</span></div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(fruits); <span class="comment">// ["appale", "pear", "putao"]</span></div><div class="line"></div><div class="line">&lt;!-- concat() 方法 合并数组 --&gt;</div><div class="line"><span class="comment">/*</span></div><div class="line">* arrayObject.concat(arrayX,arrayX,......,arrayX)</div><div class="line">* 必需参数 该参数可以是具体的值，也可以是数组对象。可以是任意多个。</div><div class="line">* 该方法不会改变现有的数组，而仅仅会返回被连接数组的一个副本。</div><div class="line">*/</div><div class="line"><span class="keyword">var</span> veggie = [<span class="string">'turnip'</span>,<span class="string">'cabbage'</span>,<span class="string">'pumpkin'</span>];</div><div class="line"><span class="keyword">var</span> fruitsEgg = fruits.concat(veggie);</div><div class="line"><span class="built_in">console</span>.log(fruitsEgg); <span class="comment">//  ["appale", "pear", "putao", "turnip", "cabbage", "pumpkin"]</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> fruitsEgg2 = veggie.concat(<span class="string">'appale'</span>,<span class="string">'putao'</span>);</div><div class="line"><span class="built_in">console</span>.log(fruitsEgg2); <span class="comment">// ["turnip", "cabbage", "pumpkin", "appale", "putao"]</span></div><div class="line"><span class="comment">//原数组不改变</span></div><div class="line"><span class="built_in">console</span>.log(fruits);  <span class="comment">//["appale", "pear", "putao"]</span></div><div class="line"><span class="built_in">console</span>.log(veggie); <span class="comment">// ["turnip", "cabbage", "pumpkin"]</span></div><div class="line"></div><div class="line">&lt;!-- join() 把数组拆开 --&gt;</div><div class="line"><span class="comment">/*</span></div><div class="line">* arrayObject.join(separator)</div><div class="line">* 可选。指定要使用的分隔符。如果省略该参数，则使用逗号作为分隔符。</div><div class="line">*/</div><div class="line"></div><div class="line"><span class="keyword">var</span> strfrus = fruits.join();</div><div class="line"><span class="built_in">console</span>.log(strfrus);  <span class="comment">// appale,pear,putao</span></div><div class="line"></div><div class="line">strfrus = fruits.join(<span class="string">'-'</span>);</div><div class="line"><span class="built_in">console</span>.log(strfrus);  <span class="comment">// appale-pear-putao</span></div><div class="line"><span class="comment">// 不影响原数组</span></div><div class="line"><span class="built_in">console</span>.log(fruits); <span class="comment">//  ["appale", "pear", "putao"]</span></div><div class="line"></div><div class="line">&lt;!-- toString() --&gt;</div><div class="line"><span class="comment">/*</span></div><div class="line">* arrayObject.toString()</div><div class="line">* arrayObject 的字符串表示。返回值与没有参数的 join() 方法返回的字符串相同。</div><div class="line">*</div><div class="line">*/</div><div class="line"><span class="keyword">var</span> fruitArr = fruits.toString();</div><div class="line"><span class="built_in">console</span>.log(fruitArr);  <span class="comment">// appale,pear,putao</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">//数组 循环/遍历 排序</span></div><div class="line"></div><div class="line">&lt;!-- forEach() --&gt;</div><div class="line"><span class="built_in">console</span>.log(fruits); <span class="comment">// ["appale", "pear", "putao"]</span></div><div class="line"></div><div class="line">fruits.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">item, index, arr</span>)</span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(arr[index]); <span class="comment">// appale pear putao</span></div><div class="line">&#125;)</div><div class="line"></div><div class="line">&lt;!-- <span class="keyword">for</span> <span class="keyword">in</span> --&gt;</div><div class="line"></div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i <span class="keyword">in</span> fruits)&#123;</div><div class="line">	<span class="built_in">console</span>.log(fruits[i]); <span class="comment">// appale pear putao</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 排序</span></div><div class="line">&lt;!-- sort() --&gt;</div><div class="line">fruits.push(<span class="string">'bbb'</span>);</div><div class="line">fruits.push(<span class="string">'eee'</span>);</div><div class="line">fruits.push(<span class="string">'ggg'</span>);</div><div class="line"><span class="built_in">console</span>.log(fruits); <span class="comment">// ["appale", "pear", "putao", "bbb", "eee", "ggg"]</span></div><div class="line"></div><div class="line">fruits.sort();</div><div class="line"><span class="built_in">console</span>.log(fruits);  [<span class="string">"appale"</span>, <span class="string">"bbb"</span>, <span class="string">"eee"</span>, <span class="string">"ggg"</span>, <span class="string">"pear"</span>, <span class="string">"putao"</span>]</div><div class="line"></div><div class="line">&lt;!-- reverse() 反序 --&gt;</div><div class="line">fruits.reverse();</div><div class="line"><span class="built_in">console</span>.log(fruits);  <span class="comment">// ["putao", "pear", "ggg", "eee", "bbb", "appale"]</span></div><div class="line"></div><div class="line"><span class="comment">// 数字数组升降许排序</span></div><div class="line"><span class="keyword">var</span> arr = [<span class="number">12</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">56</span>,<span class="number">111</span>,<span class="number">22</span>];</div><div class="line"></div><div class="line">arr.sort();</div><div class="line"><span class="built_in">console</span>.log(arr);  <span class="comment">// [0, 1, 111, 12, 22, 5, 56, 6] </span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">arrOrder</span>(<span class="params">a,b</span>)</span>&#123;</div><div class="line">	<span class="keyword">return</span> a-b;</div><div class="line">&#125;</div><div class="line">&lt;!-- ！！注意 arrOrder(只写函数名字) --&gt;</div><div class="line">arr.sort(arrOrder);  </div><div class="line"><span class="built_in">console</span>.log(arr);</div><div class="line"></div><div class="line">arr.reverse();</div><div class="line"><span class="built_in">console</span>.log(arr);</div><div class="line"></div><div class="line"><span class="comment">// 冒泡排序法</span></div><div class="line"></div><div class="line">arr = [<span class="number">12</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">56</span>,<span class="number">111</span>,<span class="number">22</span>];</div><div class="line"><span class="built_in">console</span>.log(arr);</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sortBubbs</span>(<span class="params">arr</span>)</span>&#123;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> x=<span class="number">0</span>,len=arr.length<span class="number">-1</span>; x&lt;len; x++)&#123;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">var</span> y=<span class="number">0</span>,len2=arr.length-x<span class="number">-1</span>; y&lt;len2; y++)&#123;</div><div class="line">			<span class="keyword">if</span>(arr[y]&lt;arr[y+<span class="number">1</span>])&#123;</div><div class="line">				<span class="keyword">var</span> temp = arr[y];</div><div class="line">				arr[y] = arr[y+<span class="number">1</span>];</div><div class="line">				arr[y+<span class="number">1</span>] = temp;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;	</div><div class="line">&#125;</div><div class="line">sortBubbs(arr);</div><div class="line"><span class="built_in">console</span>.log(arr);</div><div class="line"></div><div class="line"><span class="comment">//打乱数组</span></div><div class="line"><span class="keyword">var</span> arrayNum = [];</div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="number">31</span>;i++)&#123;</div><div class="line">	arrayNum[i]=i;</div><div class="line">&#125;</div><div class="line"><span class="comment">// [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]</span></div><div class="line"><span class="built_in">console</span>.log(arrayNum);</div><div class="line">arrayNum.sort(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">return</span> (<span class="number">0.5</span> - <span class="built_in">Math</span>.random());</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(arrayNum);</div><div class="line"></div><div class="line"><span class="comment">// 数组最大值 ，最小值</span></div><div class="line"><span class="keyword">var</span> max = <span class="built_in">Math</span>.max(<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>, <span class="number">11</span>, <span class="number">12</span>, <span class="number">13</span>, <span class="number">14</span>, <span class="number">15</span>);</div><div class="line"><span class="built_in">console</span>.log(max);  <span class="comment">// 15</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> arr2 = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>, <span class="number">11</span>, <span class="number">12</span>, <span class="number">13</span>, <span class="number">14</span>, <span class="number">15</span>];</div><div class="line"><span class="keyword">var</span> max2 = <span class="built_in">Math</span>.max(arr2);</div><div class="line"><span class="built_in">console</span>.log(max2);  <span class="comment">// NaN</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> max3 = <span class="built_in">Math</span>.max.apply(<span class="literal">null</span>,arr2);</div><div class="line"><span class="built_in">console</span>.log(max3);  <span class="comment">// 15</span></div></pre></td></tr></table></figure></li>
+</ul>
+
+        </div>
+        <div class="post-reply">
+            
+            
+                <div id="disqus_thread" style="width: 80%; margin: 0 auto;"></div>
+                <script>
+
+                    /**
+                     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                    /*
+                     var disqus_config = function () {
+                     this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                     this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                     };
+                     */
+                    (function() { // DON'T EDIT BELOW THIS LINE
+                        var d = document, s = d.createElement('script');
+                        s.src = 'https://haojen.disqus.com/embed.js';
+                        s.setAttribute('data-timestamp', +new Date());
+                        (d.head || d.body).appendChild(s);
+                    })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            
+        </div>
+    </div>
+</section>
+<script>
+    // 获取第一张图, 用以当封面背景图
+    var img = document.querySelectorAll('img')[1]
+    var header_box = document.querySelector('#header_box')
+    header_box.style.backgroundImage = 'url('+ img.src +')'
+</script>
+
+      </div>
+  </div>
+  <style>
+  #footer {
+    min-height: 10vh;
+    background: black;
+    color: #fff;
+  }
+
+  #footer a {
+    color: #e1e1e1;
+  }
+</style>
+<footer id="footer" class="has-text-centered is-flex center">
+  <div class="container has-padding">
+    <div>
+      <div>
+        <!--请您保留作者署名, 主题制作来之不易-->
+        Theme by <a href="http://haojen.github.io/">Haojen Ma</a>
+        <br>
+        Copyright © onelazycat 2017
+        <br>
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/search_core.js"></script>
+<script src="/js/script.js"></script>
+
+</body>
+</html>
